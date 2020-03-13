@@ -1,11 +1,15 @@
+import java.util.Random;
 
 public class Combatentes {
 	String nome;
 	int energia;
 	
-	public int ataque(int dano) {
-		return dano;
+	public int ataque() {
+		Random dano = new Random(); 
+		int ataque = dano.nextInt(10);
+		return ataque;
 	}
+	
 	public int defesa(int dano) {
 		return dano;
 	}

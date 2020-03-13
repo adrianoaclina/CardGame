@@ -1,8 +1,7 @@
 
 public class Arqueiro extends Humanos{
 	
-	public Arqueiro(String nome, int energia) {
-		this.nome = nome;
+	public Arqueiro(int energia) {
 		this.energia = energia;
 	}
 }

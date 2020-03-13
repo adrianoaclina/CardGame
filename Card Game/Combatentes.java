@@ -1,7 +1,6 @@
 import java.util.Random;
 
 public class Combatentes {
-	String nome;
 	int energia;
 	
 	public int ataque() {

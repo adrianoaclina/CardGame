@@ -1,7 +1,6 @@
 
 public class OrcMontanha extends Orc{
-	public OrcMontanha(String nome, int energia) {
-		this.nome = nome;
+	public OrcMontanha( int energia) {
 		this.energia = energia;
 	}
 }

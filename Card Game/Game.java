@@ -5,8 +5,8 @@ public class Game {
 	public static void main(String[] args) {
 		System.out.println("O jogo vai comecar!!!");
 
-		OrcMontanha player1 = new OrcMontanha("Orc1", 40);
-		Arqueiro player2 = new Arqueiro("1", 40);
+		OrcMontanha player1 = new OrcMontanha(40);
+		Arqueiro player2 = new Arqueiro(40);
 
 		Random sorteio = new Random();
 		int numero = sorteio.nextInt(10);

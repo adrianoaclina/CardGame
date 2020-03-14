@@ -10,7 +10,6 @@ public class Game {
 
 		Random sorteio = new Random();
 		int numero = sorteio.nextInt(10);
-//		System.out.println(numero);
 		if (numero % 2 == 1) {
 			System.out.println("O Player 1 vai realizar o primeiro ataque!!!");
 			while (player1.estaVivo() == true || player2.estaVivo() == true) {

@@ -1,7 +1,15 @@
+package game.combatentes;
 import java.util.Random;
 
-public class Combatentes {
-	int energia;
+public abstract class Combatentes {
+	public String nome;
+	public int energia;
+	public boolean vivo;
+	
+	public Combatentes(String nome, int energia) {
+		this.nome = nome;
+		this.energia = energia;
+	}
 	
 	public int ataque() {
 		Random dano = new Random(); 
@@ -13,7 +21,7 @@ public class Combatentes {
 		return dano;
 	}
 	
-	public boolean estaVivo() {
+	public boolean vivo() {
 		if(this.energia > 0) {
 			return true;
 		} else {

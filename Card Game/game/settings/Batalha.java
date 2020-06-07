@@ -147,7 +147,7 @@ public class Batalha {
 				System.out.println(carta2.nome + " bloqueou: " + defesaArmadura);
 				System.out.println(carta1.nome + " causou: " + danoRecebido);
 				System.out.println(carta2.nome + " tem " + ((carta2.energia < 0) ? 0 : carta2.energia));
-				Thread.sleep(2000);
+				Thread.sleep(100);
 				if (carta2.energia <= 0) {
 					System.out.println(carta2.nome + " morreu.");
 					this.jogador2.deck.armas.remove(carta2.arma);
@@ -191,7 +191,7 @@ public class Batalha {
 				System.out.println(carta1.nome + " bloqueou: " + defesaArmadura);
 				System.out.println(carta2.nome + " causou: " + danoRecebido);
 				System.out.println(carta1.nome + " tem " + ((carta1.energia < 0) ? 0 : carta1.energia));
-				Thread.sleep(2000);
+				Thread.sleep(100);
 				if (carta1.energia <= 0) {
 					System.out.println(carta1.nome + " morreu.");
 					this.jogador1.deck.armas.remove(carta1.arma);
@@ -240,7 +240,7 @@ public class Batalha {
 				System.out.println(carta1.nome + " bloqueou: " + defesaArmadura);
 				System.out.println(carta2.nome + " causou: " + danoRecebido);
 				System.out.println(carta1.nome + " tem " + ((carta1.energia < 0) ? 0 : carta1.energia));
-				Thread.sleep(2000);
+				Thread.sleep(100);
 				if (carta1.energia <= 0) {
 					System.out.println(carta1.nome + " morreu.");
 					this.jogador1.deck.armas.remove(carta1.arma);
@@ -285,7 +285,7 @@ public class Batalha {
 				System.out.println(carta2.nome + " bloqueou: " + defesaArmadura);
 				System.out.println(carta1.nome + " causou: " + danoRecebido);
 				System.out.println(carta2.nome + " tem " + ((carta2.energia < 0) ? 0 : carta2.energia));
-				Thread.sleep(2000);
+				Thread.sleep(100);
 				if (carta2.energia <= 0) {
 					System.out.println(carta2.nome + " morreu.");
 					this.jogador2.deck.armas.remove(carta2.arma);

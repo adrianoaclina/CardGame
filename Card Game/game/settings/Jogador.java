@@ -39,25 +39,51 @@ public class Jogador {
 		List<Armas> deckArmas = new ArrayList<Armas>();
 		List<Armaduras> deckArmaduras = new ArrayList<Armaduras>();
 		List<Joias> deckJoias = new ArrayList<Joias>();
+		
+		List<Combatentes> combatentes = new ArrayList<Combatentes>();
+		for(int i = 1; i < 31; i++) {
+			Combatentes combatente = fCombatente.getCombatentes(i);
+			combatentes.add(combatente);
+		}
+		List<Armas> armas = new ArrayList<Armas>();
+		List<Armaduras> armaduras = new ArrayList<Armaduras>();
+		for (int i = 1; i < 21; i++) {
+			Armas arma = fArmas.getArmas(i);
+			armas.add(arma);
+			Armaduras armadura = fArmaduras.getArmaduras(i);
+			armaduras.add(armadura);			
+		}
+		List<Joias> joias = new ArrayList<Joias>();
+		for (int i = 1; i < 10; i++) {
+			Joias joia = fJoias.getJoias(i);
+			joias.add(joia);
+		}
 		for(int i = 0; i < 5; i++) {
 			Random sorteio = new Random(); 
-			int numeroCombatente = sorteio.nextInt(30) + 1;
-			Combatentes combatente = fCombatente.getCombatentes(numeroCombatente);
+			int numeroCombatente = sorteio.nextInt(combatentes.size());
+			Combatentes combatente = combatentes.get(numeroCombatente);
 			deckCombatente.add(combatente);
+			combatentes.remove(numeroCombatente);
 		}
 		for(int i = 0; i < 6; i++) {
-			Random sorteio = new Random(); 
-			int numeroArmas = sorteio.nextInt(20) + 1;
-			Armas armas = fArmas.getArmas(numeroArmas);
-			deckArmas.add(armas);
-			Random sorteio2 = new Random(); 
-			int numeroArmaduras = sorteio2.nextInt(20) + 1;
-			Armaduras armaduras = fArmaduras.getArmaduras(numeroArmaduras);
-			deckArmaduras.add(armaduras);
-			Random sorteio3 = new Random(); 
-			int numeroJoias = sorteio3.nextInt(9) + 1;
-			Joias joias = fJoias.getJoias(numeroJoias);
-			deckJoias.add(joias);
+			// Sorteio deck de armas
+			Random sorteioArma = new Random(); 
+			int numeroArma = sorteioArma.nextInt(armas.size());
+			Armas arma = armas.get(numeroArma);
+			deckArmas.add(arma);
+			armas.remove(numeroArma);
+			// Sorteio deck de armaduras
+			Random sorteioArmadura = new Random(); 
+			int numeroArmadura = sorteioArmadura.nextInt(armaduras.size());
+			Armaduras armadura = armaduras.get(numeroArmadura);
+			deckArmaduras.add(armadura);
+			armaduras.remove(numeroArmadura);
+			// Sorteio deck de joias
+			Random sorteioJoias = new Random(); 
+			int numeroJoia = sorteioJoias.nextInt(joias.size());
+			Joias joia = joias.get(numeroJoia);
+			deckJoias.add(joia);
+			joias.remove(numeroJoia);
 		}
 		this.deck = new Deck(deckCombatente, deckArmas, deckArmaduras, deckJoias);
 	}

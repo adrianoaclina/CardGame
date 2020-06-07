@@ -11,9 +11,10 @@ public class Game {
 		
 		// Jogadores montam seus decks
 		jogador1.montarDeck();
-		jogador2.montarDeck();		
+		jogador2.montarDeck();	
+			
 		// Inicio da batalha
-		Batalha batalha = new Batalha(jogador1, jogador2);
-		batalha.batalhar();
+		//Batalha batalha = new Batalha(jogador1, jogador2);
+		//batalha.batalhar();
 	}
 }

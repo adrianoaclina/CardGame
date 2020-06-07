@@ -1,14 +1,25 @@
 package game.combatentes;
 import java.util.Random;
 
+import game.armaduras.Armaduras;
+import game.armas.Armas;
+import game.caracteristicas.TipoCombatentes;
+import game.joias.Joias;
+
 public abstract class Combatentes {
 	public String nome;
 	public int energia;
 	public boolean vivo;
+	public TipoCombatentes tipo;
 	
-	public Combatentes(String nome, int energia) {
+	public Armas arma;
+	public Armaduras armadura;
+	public Joias joia;
+	
+	public Combatentes(String nome, int energia, TipoCombatentes tipo) {
 		this.nome = nome;
 		this.energia = energia;
+		this.tipo = tipo;
 	}
 	
 	public int ataque() {
@@ -18,6 +29,7 @@ public abstract class Combatentes {
 	}
 	
 	public int defesa(int dano) {
+		
 		return dano;
 	}
 	

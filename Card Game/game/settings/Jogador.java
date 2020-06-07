@@ -2,10 +2,17 @@ package game.settings;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
+import game.armaduras.Armaduras;
+import game.armaduras.FactoryArmaduras;
+import game.armas.Armas;
+import game.armas.FactoryArmas;
 import game.combatentes.Combatentes;
 import game.combatentes.FactoryCombatentes;
+import game.joias.FactoryJoias;
+import game.joias.Joias;
 
 public class Jogador {
 	public String nome;
@@ -24,21 +31,36 @@ public class Jogador {
 	}
 
 	public void montarDeck() {
-		@SuppressWarnings("resource")
-		Scanner input = new Scanner(System.in);
-		FactoryCombatentes fabrica = new FactoryCombatentes();
-		List<Combatentes> deckJogador = new ArrayList<Combatentes>();
-		System.out.println("Vamos montar o seu deck " + this.nome + " ele deverá ter 3 cartas!");
-		for(int i = 0; i < 3; i++) {
-			System.out.println("Escolha uma das cartas abaixo, escolha de Nº: "+ (i+1));
-			System.out.println("#1- Arqueiro" + "\n#2- Orc do Deserto" + "\n#3- Dragão de gelo" + "\n#4- Mago de Gelo"
-					+ "\n#5- Dragão de Fogo" + "\n#6- Orc da Montanha" + "\n#7- Trol Gigante" + "\n#8- Mago Elétrico");
-			int card = input.nextInt();
-			Combatentes jogador = fabrica.getCombatentes(100, card);
-			deckJogador.add(jogador);
-			System.out.println("--------------------------------------------------------------------");
+		FactoryCombatentes fCombatente = new FactoryCombatentes();
+		FactoryArmas fArmas = new FactoryArmas();
+		FactoryArmaduras fArmaduras = new FactoryArmaduras();
+		FactoryJoias fJoias = new FactoryJoias();
+		List<Combatentes> deckCombatente = new ArrayList<Combatentes>();
+		List<Armas> deckArmas = new ArrayList<Armas>();
+		List<Armaduras> deckArmaduras = new ArrayList<Armaduras>();
+		List<Joias> deckJoias = new ArrayList<Joias>();
+		for(int i = 0; i < 5; i++) {
+			Random sorteio = new Random(); 
+			int numeroCombatente = sorteio.nextInt(30) + 1;
+			Combatentes combatente = fCombatente.getCombatentes(numeroCombatente);
+			deckCombatente.add(combatente);
 		}
-		this.deck = new Deck(deckJogador);
+		for(int i = 0; i < 6; i++) {
+			Random sorteio = new Random(); 
+			int numeroArmas = sorteio.nextInt(20) + 1;
+			Armas armas = fArmas.getArmas(numeroArmas);
+			deckArmas.add(armas);
+			Random sorteio2 = new Random(); 
+			int numeroArmaduras = sorteio2.nextInt(20) + 1;
+			Armaduras armaduras = fArmaduras.getArmaduras(numeroArmaduras);
+			deckArmaduras.add(armaduras);
+			Random sorteio3 = new Random(); 
+			int numeroJoias = sorteio3.nextInt(9) + 1;
+			Joias joias = fJoias.getJoias(numeroJoias);
+			deckJoias.add(joias);
+		}
+		this.deck = new Deck(deckCombatente, deckArmas, deckArmaduras, deckJoias);
+		System.out.println("");
 	}
 	public int cartasVivas(){
         int cartasVivas = 0;

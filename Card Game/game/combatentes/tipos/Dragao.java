@@ -1,9 +1,11 @@
 package game.combatentes.tipos;
 
-public class Dragao extends Monstros{
+import game.caracteristicas.TipoCombatentes;
 
-	public Dragao(String nome, int energia) {
-		super(nome, energia);
+public abstract class Dragao extends Monstros{
+
+	public Dragao(String nome) {
+		super(nome, TipoCombatentes.VOADOR);
 	}
-
+	
 }

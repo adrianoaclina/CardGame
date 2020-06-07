@@ -2,7 +2,7 @@ package game.settings;
 
 public class Game {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		
 		System.out.println("O jogo vai comecar!!!");
 		// Cria e nomeia os dois jogadores
@@ -14,7 +14,7 @@ public class Game {
 		jogador2.montarDeck();	
 			
 		// Inicio da batalha
-		//Batalha batalha = new Batalha(jogador1, jogador2);
-		//batalha.batalhar();
+		Batalha batalha = new Batalha(jogador1, jogador2);
+		batalha.batalhar();
 	}
 }

@@ -24,15 +24,13 @@ public abstract class Combatentes {
 	
 	public int ataque() {
 		Random dano = new Random(); 
-		int ataque = dano.nextInt(10);
+		int ataque = dano.nextInt(10) + 1;
 		return ataque;
 	}
 	
-	public int defesa(int dano) {
-		
+	public double defesa(double dano) {
 		return dano;
 	}
-	
 	public boolean vivo() {
 		if(this.energia > 0) {
 			return true;

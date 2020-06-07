@@ -1,6 +1,6 @@
 package game.caracteristicas;
 
-public class Fraquezas {
+public class FraquezasArmasArmaduras {
 	
 	
 	public double fraqueza(TipoArmasArmaduras atacante, TipoArmasArmaduras defensor) {

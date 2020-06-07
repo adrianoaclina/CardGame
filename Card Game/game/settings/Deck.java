@@ -25,12 +25,20 @@ public class Deck {
         return this.cards;
     } 
     
-    public int getTamanhoDeck(){
+    public int getJoiasSize(){
+    	return this.joias.size();
+    }
+    public int getArmadurasSize(){
+    	return this.armaduras.size();
+    }
+    public int getArmasSize(){
+    	return this.armas.size();
+    }
+    public int getCartasSize(){
     	return this.cards.size();
     }
     public void tiraCardsMortas(){
-
-        for(int i = 0; i < this.getTamanhoDeck(); i++){
+        for(int i = 0; i < this.getCartasSize(); i++){
             Combatentes card = this.getCards().get(i);
             if(!card.vivo()){
                 this.cards.remove(i);

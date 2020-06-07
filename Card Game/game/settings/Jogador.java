@@ -60,11 +60,10 @@ public class Jogador {
 			deckJoias.add(joias);
 		}
 		this.deck = new Deck(deckCombatente, deckArmas, deckArmaduras, deckJoias);
-		System.out.println("");
 	}
 	public int cartasVivas(){
         int cartasVivas = 0;
-        for(int i = 0; i < this.deck.getTamanhoDeck(); i++){
+        for(int i = 0; i < this.deck.getCartasSize(); i++){
             if(this.deck.getCards().get(i).vivo()){
             	cartasVivas++;
             }
